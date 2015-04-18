@@ -54,7 +54,7 @@ int currentLetter = 0;
 stack<long> lastValues;
 bool didPreviousFPSCommandSucceed = false;
 
-int currentFPS = NO_FPS_CALCULATED;
+int currentFPS = 0;
 
 void setup() {
   Serial.begin(115200);
