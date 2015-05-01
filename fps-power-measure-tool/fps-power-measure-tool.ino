@@ -58,17 +58,17 @@ void adbEventHandler(Connection * connection, adb_eventType event, uint16_t leng
 
       } else if (recvData == '$') {
         //Reached end of command
-        
+
 
 
         currentLetter = 0;
-        
-        if(lastValues.size() == 0){
-          
-          if(didPreviousFPSCommandSucceed == false){
-             Serial.println(NO_FPS_CALCULATED);
+
+        if (lastValues.size() == 0) {
+
+          if (didPreviousFPSCommandSucceed == false) {
+            Serial.println(NO_FPS_CALCULATED);
           }
-          
+
           didPreviousFPSCommandSucceed = false;
           return;
         }
@@ -77,7 +77,7 @@ void adbEventHandler(Connection * connection, adb_eventType event, uint16_t leng
         didPreviousFPSCommandSucceed = true;
 
         Serial.println(frameCount);
-        
+
 
       } else {
         resultLine[currentLetter] = recvData;
@@ -95,8 +95,12 @@ void adbEventHandler(Connection * connection, adb_eventType event, uint16_t leng
 int framesCounted() {
   int frameCount = 0;
   long lastFrameFinishedTime = lastValues.top();
-  
-  
+
+  if (!lastValues.empty()) {
+    //Ignore the last value is it can be invalid on some systems, notably the Nexus 5
+    lastValues.pop();
+  }
+
   while (!lastValues.empty()) {
     long currentValue = lastValues.top();
     lastValues.pop();
