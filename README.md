@@ -1,5 +1,5 @@
 # fps-power-measure-tool
-An Arduino setup to measure the FPS and power usage of a connected Android device. If you just want to measure the power usage, you can check out this [previous project](https://github.com/yeokm1/power_measure_tool) of mine.
+An Arduino setup to measure the frames per second (FPS) and power usage of a connected Android device. If you just want to measure the power usage, you can check out this [previous project](https://github.com/yeokm1/power_measure_tool) of mine. FPS data is obtained via ADB over the USB cable and power via a current sensor.
 
 I created this tool for the purposes of my final year project and I have open-sourced it in case anyone wishes to learn from this setup.
 
@@ -15,8 +15,10 @@ This logical schematic differs slightly from the physical curcuit layout. The mo
 1. Arduino Mega ADK
 2. Adafruit INA219 High Side DC Current Sensor Breakout
 3. Adafruit 1.3" 128x64 OLED set to I2C
-4. [Pololu 5V Step-Up/Step-Down Voltage Regulator S7V7F5](https://www.pololu.com/product/2119)
+4. [Pololu 5V Step-Up/Step-Down Voltage Regulator S7V7F5](https://www.pololu.com/product/2119) (others will work fine)
 5. Push Button
 
 ##References and libraries
 1. [Smoothing algorithm](http://arduino.cc/en/Tutorial/Smoothing)
+2. [Modified microbridge arduino](https://github.com/agoransson/microbridge-arduino)
+3. [Standard C++ for Arduino](https://github.com/maniacbug/StandardCplusplus)
