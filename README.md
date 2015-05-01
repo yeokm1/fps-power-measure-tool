@@ -1,11 +1,16 @@
 # fps-power-measure-tool
 An Arduino setup to measure the frames per second (FPS) and power usage of a connected Android device. If you just want to measure the power usage, you can check out this [previous project](https://github.com/yeokm1/power_measure_tool) of mine. FPS data is obtained via ADB over the USB cable and power via a current sensor.
 
-I created this tool for the purposes of my final year project and I have open-sourced it in case anyone wishes to learn from this setup.
+I created this tool for the purposes of my final year project (FYP) and I have open-sourced it in case anyone wishes to learn from this setup.
 
 ![Screen](misc/front-pair.jpg)
 
 Picture of two sets as used in my final year project.
+
+###Video of my usage in my FYP
+[![](http://img.youtube.com/vi/W7nGmd0tQ70/0.jpg)](https://www.youtube.com/watch?v=W7nGmd0tQ70)
+
+###Schematic:
 
 ![Screen](misc/schematic.png)
 
