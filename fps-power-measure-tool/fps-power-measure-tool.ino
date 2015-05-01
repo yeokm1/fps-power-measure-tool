@@ -3,6 +3,7 @@
 #include <StandardCplusplus.h>
 #include <Stack>
 
+//The "echo $" is for indicating the end of the command output
 #define FPS_COMMAND "dumpsys SurfaceFlinger --latency SurfaceView && echo $\n"
 #define FPS_RESULT_LINE_LENGTH 100
 #define TIME_INTERVAL_FPS_SECOND 1000
