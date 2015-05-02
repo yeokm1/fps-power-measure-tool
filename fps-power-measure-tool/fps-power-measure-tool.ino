@@ -95,12 +95,17 @@ void adbEventHandler(Connection * connection, adb_eventType event, uint16_t leng
 
 int framesCounted() {
   int frameCount = 0;
-  long lastFrameFinishedTime = lastValues.top();
 
   if (!lastValues.empty()) {
     //Ignore the last value is it can be invalid on some systems, notably the Nexus 5
     lastValues.pop();
   }
+
+  if (lastValues.empty()) {
+    return NO_FPS_CALCULATED;
+  }
+
+  long lastFrameFinishedTime = lastValues.top();
 
   while (!lastValues.empty()) {
     long currentValue = lastValues.top();
